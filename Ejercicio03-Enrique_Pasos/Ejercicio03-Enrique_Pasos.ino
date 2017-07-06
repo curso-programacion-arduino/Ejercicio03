@@ -8,11 +8,17 @@ boolean anterior_a;
 boolean anterior_b;
 
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(PIN_BOTON_A, INPUT_PULLUP);
+  pinMode(PIN_BOTON_B, INPUT);
+
+  anterior_a = digitalRead(PIN_BOTON_A);
+  anterior_b = digitalRead(PIN_BOTON_B);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  boolean estado_a = digitalRead(PIN_BOTON_A);
+  boolean estado_b = digitalRead(PIN_BOTON_B);
 
 }
