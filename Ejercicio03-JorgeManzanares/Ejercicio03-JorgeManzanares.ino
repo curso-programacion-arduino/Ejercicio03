@@ -1,15 +1,14 @@
 #define PIN_BOTON_A 2
 #define PIN_BOTON_B 3
+int pulsos_a ;
+int pulsos_b ;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 }
 void loop() {
-  Serial.begin(9600);
-  // put your main code here, to run repeatedly
-
-  int pulsos_a ;
-  int pulsos_b ;
+  
   static boolean anterior_a = digitalRead(PIN_BOTON_A);
   static boolean anterior_b = digitalRead(PIN_BOTON_B);
 
