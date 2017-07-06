@@ -21,4 +21,16 @@ void loop() {
   boolean estado_a = digitalRead(PIN_BOTON_A);
   boolean estado_b = digitalRead(PIN_BOTON_B);
 
+  if (anterior_a != estado_a) {
+    if (estado_a == LOW) {  //flanco descendente pull-up
+      pulsos_a++;
+      imprimePulsaciones();
+    }
+  }
+  anterior_a = estado_a;
+  delay(50); //Evitar rebotes
+}
+
+void imprimePulsaciones() {
+  Serial.println("Contador A: " + (String)pulsos_a + "\tContador B: " + (String)pulsos_b);
 }
