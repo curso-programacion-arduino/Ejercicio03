@@ -14,6 +14,7 @@ void setup() {
 
   anterior_a = digitalRead(PIN_BOTON_A);
   anterior_b = digitalRead(PIN_BOTON_B);
+
 }
 
 void loop() {
@@ -26,15 +27,7 @@ void loop() {
       imprimePulsaciones();
     }
   }
-
-  if (anterior_b != estado_b) {
-    if (estado_b == HIGH) {  //flanco ascendente pull-down
-      pulsos_b++;
-      imprimePulsaciones();
-    }
-  }
   anterior_a = estado_a;
-  anterior_b = estado_b;
   delay(50); //Evitar rebotes
 }
 
