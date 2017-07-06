@@ -11,8 +11,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   if (digitalRead(pin)==1 && flanco == 0){
     flanco = 1;
-    pulsaciones = ++pulsaciones;
-    Serial.println(pulsaciones);
+    Serial.println(++pulsaciones);
   }
   if (digitalRead(pin)==0){
     flanco = 0;
