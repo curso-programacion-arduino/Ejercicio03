@@ -12,19 +12,9 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   Serial.println(F("Prueba Botones"));
-  int pulsos_a = 0;
-  int pulsos_b = 0;
-  static boolean anterior_a = digitalRead(PIN_BOTON_A);
-  static boolean anterior_b = digitalRead(PIN_BOTON_B);
-
-  while (true) {
-    //Compruebo si llega una q
-    if (Serial.available() > 0) {
-      char caracter_leido = Serial.read();
-      if (caracter_leido == 'q')
-        break;
-    }
-
+  static int pulsos_a = 0;
+  static int pulsos_b = 0;
+    
     boolean estado_a = digitalRead(PIN_BOTON_A);
     boolean estado_b = digitalRead(PIN_BOTON_B);
 
