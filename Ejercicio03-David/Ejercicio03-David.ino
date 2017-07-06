@@ -26,22 +26,26 @@ void loop() {
   if (estadoInicial_A != estadoActual_A) {
     if (estadoActual_A == LOW) {
       pulsaciones_A++;
+      Serial.println("Has pulsado el boton A");
       totalPulsaciones++;
       imprimePulsaciones();
+      Serial.println();
     }
   }
- 
+
   if (estadoInicial_B != estadoActual_B) {
-    if (estadoInicial_B == LOW) {  
+    if (estadoInicial_B == LOW) {
       pulsaciones_B++;
+      Serial.println("Has pulsado el boton B");
       imprimePulsaciones();
       totalPulsaciones++;
+      Serial.println();
     }
   }
   estadoInicial_A = estadoInicial_A;
   estadoInicial_B = estadoInicial_B;
-  
-  delay(90); 
+
+  delay(90);
 }
 
 void imprimePulsaciones() {
