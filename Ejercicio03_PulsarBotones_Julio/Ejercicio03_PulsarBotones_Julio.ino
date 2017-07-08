@@ -20,15 +20,19 @@ int pulsos_a = 0;
 int pulsos_b = 0;
 boolean anterior_a;
 boolean anterior_b;
+int totalPulsos = 0;
 
 void setup()
 {
   Serial.begin(9600);
+
   pinMode(PIN_BOTON_A, INPUT_PULLUP);
-  pinMode(PIN_BOTON_B, INPUT);
+  pinMode(PIN_BOTON_B, INPUT_PULLUP);
 
   anterior_a = digitalRead(PIN_BOTON_A);
   anterior_b = digitalRead(PIN_BOTON_B);
+
+  Serial.println("Pulsar para inicio");
 }
 
 void loop()
@@ -55,6 +59,7 @@ void loop()
     {
       //flanco descendente pull-up
       pulsos_a++;
+      totalPulsos = totalPulsos + 1;
       imprimePulsaciones();
       // aqui llamamos a la funcion "imprimePulsaciones()"
     }
@@ -66,6 +71,7 @@ void loop()
     {
       //flanco ascendente pull-down
       pulsos_b++;
+      totalPulsos = totalPulsos + 1;
       imprimePulsaciones();
     }
   }
@@ -86,5 +92,6 @@ void loop()
 void imprimePulsaciones()
 {
   Serial.println("Contador A: " + (String)pulsos_a + "\tContador B: " + (String)pulsos_b);
+  Serial.println("Total pulsos: " + (String)totalPulsos);
 }
 
