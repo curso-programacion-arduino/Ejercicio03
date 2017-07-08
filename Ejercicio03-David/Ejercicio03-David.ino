@@ -42,8 +42,8 @@ void loop() {
       Serial.println();
     }
   }
-  estadoInicial_A = estadoInicial_A;
-  estadoInicial_B = estadoInicial_B;
+  estadoInicial_A = estadoActual_A;
+  estadoInicial_B = estadoActual_B;
 
   delay(90);
 }
